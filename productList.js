@@ -1,6 +1,5 @@
 root.innerHTML += `
-    <h2>Telefoane:</h2>
-    <ul id="product-list"></ul>
+     <ul class="product-list" id="product-list"></ul>
 `;
 
 function renderProductList(products) {
@@ -10,4 +9,14 @@ function renderProductList(products) {
         const phone = new Product(product.name, product.price, product.image, product.releaseYear, product.dateWhenAdded);
         phone.renderProduct();
     });
+}
+
+function deleteElement(clickedId) {
+    const localStorageProducts = getProducts();
+    const filteredStorageProducts = localStorageProducts.filter(function(product){
+        return product.name != clickedId;
+    });
+
+    setProducts(filteredStorageProducts);
+    renderProductList(filteredStorageProducts);
 }

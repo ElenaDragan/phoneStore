@@ -1,36 +1,93 @@
-#about {
-    background-color: rgb(92,184,92);
-    text-align: center;
-    color: white;
-    margin: 0px 0 20px 0;
-    padding: 50px;
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+.topnav {
+  background-color: #333;
+  overflow: hidden;
 }
-#portfolio {
-  background-color: #00b33c;
-    text-align: center;
-    color: white;
-    margin: 0px 0 20px 0;
-    padding: 20px;
+.topnav a {
+  float: left;
+  color:#04AA6D;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; 
+  font-family: 'Abril Fatface', cursive;
+  font-size: 17px;
 }
-#contact{
-    background-color: rgb(0, 102, 34);
-    text-align: center;
-    color: white;
-    margin: 0px 0 20px 0;
-    padding: 50px;
+
+.topnav a:hover {
+  background-color:#04AA6D;
+  color: black;
 }
-.myNavbar{
-  background-color: rgb(0, 230, 138);
-  font-weight: bold;
-  color: white !important;
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
+
+.topnav a.active {
+  background-color:black;
+  color:#04AA6D;
 }
-.nav{
-    background-color: rgb(0, 230, 138);
-    font-weight: bold;
-    text-align: center;
-    color: white !important;
+
+.title{
+  color:#04AA6D;
+  text-align: right;
+  margin-right: 10%;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 100%;
+  
 }
+
+
+.product-list { 
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.nume{
+  font-size: 150%;
+  font-family: 'Limelight', cursive;
+  font-family: 'Pattaya', sans-serif;
+  background-color: #04AA6D;
+}
+
+.buttons{
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+}
+
+.mybutton{
+  background-color:#04AA6D;
+}
+
+
+
+.wrapper {
+  background-color: #04AA6D;
+  list-style-type: none;
+  padding: 0;
+  border-radius: 3px;
+}
+.form-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: .5em;
+}
+.form-row > label {
+  padding: .5em 1em .5em 0;
+}
+.form-row > input {
+  flex: 1;
+}
+.form-row > input,
+.form-row > button {
+  padding: .5em;
+}
+.form-row > button {
+ background: black;
+ color: white;
+ border: 0;
+}
+
 

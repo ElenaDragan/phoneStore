@@ -11,11 +11,12 @@ class Product {
         const productList = document.querySelector('#product-list');
         productList.innerHTML += `
             <li class="product">
-                <p>Nume: ${this.name}</p>
-                <p>Pret: ${this.price}</p>
+                <p class="nume">Nume: ${this.name}</p>
                 <img src=${this.image} width="70" height="100"></img>
+                <p class="pret">Pret: ${this.price}</p>
                 <p>Anul aparitiei: ${this.releaseYear}</p>
                 <p>Anul adaugarii: ${this.dateWhenAdded}</p>
+                <button id="${this.name}" onClick="deleteElement(this.id)">Delete</button>
             </li>
         `;
     }

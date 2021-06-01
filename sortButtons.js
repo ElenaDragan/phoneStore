@@ -1,10 +1,13 @@
 root.innerHTML += `
-    <button id="sort-by-price">Sorteaza dupa pret</button>
-    <button id="sort-by-release-year">Sorteaza dupa anul aparitiei</button>
-    <button id="sort-by-date-when-added">Sorteaza dupa anul adaugarii</button>
-    <button id="sort-by-name">Sorteaza dupa nume</button>
-    <button id="filter-by-price">Filtreaza dupa pret</button>
-    
+    <div class="buttons">
+    <button class="mybutton" id="sort-by-price">Sorteaza dupa pret</button>
+    <button class="mybutton" id="sort-by-release-year">Sorteaza dupa anul aparitiei</button>
+    <button class="mybutton" id="sort-by-date-when-added">Sorteaza dupa anul adaugarii</button>
+    <button class="mybutton" id="sort-by-name">Sorteaza dupa nume</button>
+    <button class="mybutton" id="filter-by-price">Filtreaza dupa pret</button>
+    <button class="mybutton" id="filter-price">Total</button>
+</div>
+
 `;
 
 function sortPhones(sortType) {
@@ -79,6 +82,19 @@ function filterPhonesByPrice(price) {
     renderProductList(filteredArray);        
 }
 
+function sum () {
+    const localStorageProducts = getProducts();
+    let total = 0;
+    const totalArray = localStorageProducts.forEach(function(product) {
+          total += product.price;
+        });
+        console.log(total);
+        
+        const totalDiv = document.querySelector('#total');
+        totalDiv.innerHTML=`<p>Total: ${total}</p>`
+    }
+
+  
 function addSortingFunctionality() {
     const sortByPrice = document.querySelector('#sort-by-price');
     sortByPrice.addEventListener('click', function() {
@@ -104,6 +120,9 @@ function addSortingFunctionality() {
     filterByPrice.addEventListener('click', function() {
         filterPhonesByPrice(4200);
     });
+
+    const totalPrice = document.querySelector('#filter-price');
+    totalPrice.addEventListener('click', sum);
 }
 
 window.addEventListener('load', addSortingFunctionality);
